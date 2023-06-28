@@ -1,0 +1,9 @@
+#Deriving the latest base image
+FROM python:latest
+WORKDIR /Users/adlfkl/Desktop/SGH/RTA/Project/consumer
+COPY consumer.py ./
+COPY requirements.txt requirements.txt
+COPY database.ini database.ini
+RUN pip3 install -r requirements.txt
+COPY . .
+CMD [ "python", "./consumer.py"]
